@@ -1,0 +1,7 @@
+#!/bin/bash
+for i in {1..99}
+do
+./dsqgen  -template query$i.tpl -directory query_templates  -dialect oracle -scale 1
+ mv query_0.sql query_$i.sql
+ mv ~/tpcds/tools/query_$i.sql ~/tpcds/tools/abc/
+done
